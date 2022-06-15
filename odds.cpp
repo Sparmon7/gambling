@@ -26,12 +26,16 @@ int prompt() {
 	cout << endl;
 	cout << "Welcome to the Gambling Helper" << endl;
 
-	cout << "Type the name of the first team" << endl;
+	/*cout << "Type the name of the first team" << endl;
 	cin >> firstName;
 
 	cout << endl;
 	cout << "Insert the name of the second team" << endl;
 	cin >> secondName;
+	*/
+
+	firstName = "team1";
+	secondName = "team2";
 
 	double revenue1 = -1;
 	while (revenue1 == -1) {
@@ -54,14 +58,16 @@ int prompt() {
 
 	cout << "Returns (in terms of revenue) on a bet on the " << firstName << " is " << revenue1 << endl;
 	cout << "Returns (in terms of revenue) on a bet on the " << secondName << " is " << revenue2 << endl;
+	cout << endl;
+	double profitCalc = (revenue1 * revenue2) / (revenue1 + revenue2) - 1;
+	cout << "With this strategy, you are guaranteed a profit of " << profitCalc << "%" << endl;
 
 	if (revenue1 * revenue2 <= revenue1 + revenue2) {
 		cout << "No guaranteed winning strategy :(" << endl;
 		return -1;
 	}
 
-	double profitCalc = (revenue1 * revenue2) / (revenue1 + revenue2) - 1;
-	cout << "With this strategy, you are guaranteed a profit of " << profitCalc << "%" << endl;
+	
 
 
 	int wager = -1;
